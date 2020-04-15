@@ -1,0 +1,34 @@
+---
+title: "PitchForApplication"
+author: "TFH"
+date: "15 4 2020"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## IDEA
+
+The idea is, that you can easy decide how much features do you would like for rthe decision tree and then the decisions tree will display, so you can decide in the future, which class your observation is
+
+## Input
+
+In the Slider you can decide, how much features you would like, it counts from the first feature in the iris data set until the fourth.
+
+## Output
+
+The output is a fancy decision tree
+
+## Example output
+
+```{r , error=FALSE, message=FALSE, warning=FALSE}
+data(iris)
+library(caret)
+model <- train(Species ~ .,method="rpart",data=iris)
+library(rattle)
+ fancyRpartPlot(model$finalModel)
+```
+
+
